@@ -10,4 +10,4 @@ COPY --from=node /usr/local/include /usr/local/include
 COPY --from=node /usr/local/bin /usr/local/bin
 COPY --from=node /opt /opt
 
-RUN npm install -g @trapezedev/configure @ionic/cli
+RUN npm install -g @trapezedev/configure @ionic/cli firebase-tools
