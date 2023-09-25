@@ -1,5 +1,5 @@
 FROM node:lts-alpine AS node
-FROM alvrme/alpine-android:android-33-jdk17-$ANDROID_DATE
+FROM alvrme/alpine-android:android-33-jdk17-v$ANDROID_DATE
 
 COPY --from=node /usr/lib /usr/lib
 COPY --from=node /usr/local/share /usr/local/share
