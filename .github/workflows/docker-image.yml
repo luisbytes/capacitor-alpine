@@ -30,4 +30,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: luisbytes/capacitor:v5-${{ github.event.inputs.android }}
+          tags: luisbytes/capacitor:v6-${{ github.event.inputs.android }}
