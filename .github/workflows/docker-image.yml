@@ -6,9 +6,6 @@ on:
       tag_image:
         required: true
         description: Docker Image Android Tag
-      capacitor_version:
-        required: true
-        description: Capacitor Version
 
 jobs:
   push_to_registry:
