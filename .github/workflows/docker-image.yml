@@ -3,12 +3,9 @@ name: Publish Docker image
 on:
   workflow_dispatch:
     inputs:
-      android_date:
+      tag_image:
         required: true
-        description: Android Date
-      android_sdk:
-        required: true
-        description: Android SDK Version
+        description: Docker Image Android Tag
       capacitor_version:
         required: true
         description: Capacitor Version
@@ -32,9 +29,8 @@ jobs:
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           build-args: |
-            ANDROID_DATE=${{ github.event.inputs.android_date }}
-            ANDROID_SDK=${{ github.event.inputs.android_sdk }}
+            TAG_IMAGE=${{ github.event.inputs.tag_image }}
           context: .
           file: ./Dockerfile
           push: true
-          tags: luisbytes/capacitor:v${{ github.event.inputs.capacitor_version }}-${{ github.event.inputs.android_date }}
+          tags: luisbytes/capacitor:${{ github.event.inputs.tag_image }}
